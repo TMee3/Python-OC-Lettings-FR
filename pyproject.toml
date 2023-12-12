@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "python-oc-lettings-fr"
+version = "0.1.0"
+description = ""
+authors = ["TMee3  <theopsna@protonmail.com>"]
+readme = "README.md"
+packages = [{include = "python_oc_lettings_fr"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Django = "^5.0"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^6.1.0"
+pytest-django = "^4.7.0"
+coverage = "^7.3.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
