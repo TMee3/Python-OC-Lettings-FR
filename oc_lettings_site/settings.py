@@ -1,12 +1,18 @@
 import os
 from pathlib import Path
-
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+sentry_sdk.init(
+    dsn="https://50082559959af4e140bb7b8aba7ef855@o4506340937760768.ingest.sentry.io/4506385496211456",
+    integrations=[DjangoIntegration()],
+    traces_sample_rate=1.0,
+    profiles_sample_rate=1.0,
+    send_default_pii=True,
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -15,20 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False  # in order to show 404
+DEBUG = True  # in order to show 404
 
 ALLOWED_HOSTS = ["*"]
 
-# Ajouter sentry pour la gestion des erreurs
-
-# Sentry
-sentry_sdk.init(
-    dsn="https://50082559959af4e140bb7b8aba7ef855@o4506340937760768.ingest.sentry.io/4506385496211456",
-    integrations=[DjangoIntegration()],
-    traces_sample_rate=1.0,
-    profiles_sample_rate=1.0,
-    send_default_pii=True,
-)
 
 # Application definition
 
@@ -124,9 +120,9 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-STATIC_URL = "./static/"
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    BASE_DIR / "/static",
+    BASE_DIR / "static",
 ]
 
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
