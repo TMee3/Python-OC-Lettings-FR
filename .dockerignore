@@ -1,0 +1,11 @@
+*
+# Whitelist everything below
+lettings/**/*.py
+oc_lettings_site/**/*.py
+profiles/**/*.py
+static
+templates
+Dockerfile
+manage.py
+poetry.lock
+pyproject.toml

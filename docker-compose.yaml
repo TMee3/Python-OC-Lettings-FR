@@ -4,6 +4,3 @@ services:
     build: .
     ports:
       - "8000:8000"
-    command: poetry run python manage.py runserver
-    volumes:
-      - .:/code

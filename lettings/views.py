@@ -5,12 +5,6 @@ from profiles.models import Profile
 from django.shortcuts import render
 
 
-def index(request):
-    """Home page, index view"""
-
-    return render(request, "index.html")
-
-
 def lettings_index(request):
     """Lettings index view, list all lettings"""
 
