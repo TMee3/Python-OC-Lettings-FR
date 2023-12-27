@@ -1,9 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 
 from lettings.models import Letting
-from profiles.models import Profile
 from django.shortcuts import render
-from django.shortcuts import get_object_or_404
+
+
+def index(request):
+    """Home page, index view"""
+
+    return render(request, "index.html")
 
 
 def lettings_index(request):
@@ -13,6 +17,7 @@ def lettings_index(request):
     context = {"lettings_list": lettings_list}
     return render(request, "lettings/lettings_index.html", context)
 
+
 def letting(request, letting_id):
     """
     Letting view, show a letting details
@@ -20,29 +25,10 @@ def letting(request, letting_id):
     params: letting_id (int)
     """
 
-    letting = get_object_or_404(Letting, id=letting_id)
+    letting = get_object_or_404(Letting, pk=letting_id)
     context = {
         "title": letting.title,
         "address": letting.address,
     }
     return render(request, "lettings/letting.html", context)
-
-def profiles_index(request):
-    """Profiles index view, list all profiles"""
-
-    profiles_list = Profile.objects.all()
-    context = {"profiles_list": profiles_list}
-    return render(request, "profiles/profiles_index.html", context)
-
-
-def profile(request, username):
-    """
-    Profile view, show a profile details
-
-    params: username (str)
-    """
-
-    profile = Profile.objects.get(user__username=username)
-    context = {"profile": profile}
-    return render(request, "profiles/profile.html", context)
 

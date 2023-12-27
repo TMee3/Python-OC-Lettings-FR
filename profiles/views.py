@@ -1,6 +1,8 @@
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
 from profiles.models import Profile
+
 
 def profiles_index(request):
     """Profiles index view, list all profiles"""
@@ -17,7 +19,7 @@ def profile(request, username):
     params: username (str)
     """
 
-    profile = Profile.objects.get(user__username=username)
+    profile = get_object_or_404(Profile, user__username=username)
     context = {"profile": profile}
     return render(request, "profiles/profile.html", context)
 

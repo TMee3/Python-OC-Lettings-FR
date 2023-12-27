@@ -23,6 +23,8 @@ def demo_error_view(request):
         logger.error("Une erreur s'est produite : %s", e)
     return HttpResponse("Événement ERROR envoyé à Sentry")
 
+
+
 urlpatterns = [
     path("", oc_lettings_site_views.index, name="index"),
     path("lettings/", lettings_views.lettings_index, name="lettings_index"),
