@@ -1,11 +1,15 @@
 *
 # Whitelist everything below
 !lettings/**/*.py
+!lettings_site/**/*.html
 !oc_lettings_site/**/*.py
+!oc_lettings_site/**/*.html
 !profiles/**/*.py
+!profiles/**/*.html
 !static
 !templates
 !Dockerfile
 !manage.py
 !poetry.lock
 !pyproject.toml
+!oc_lettings_site.sqlite3
