@@ -18,3 +18,26 @@ jobs:
       - run:
           name: Run Tests
           command: poetry run python manage.py test
+
+  deploy:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: "Deploy"
+          command: curl -X POST https://api.render.com/deploy/srv-cmai4b6d3nmc73cqdf0g?key=rOHjWQx__zA
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          name: Deploy to Render
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
