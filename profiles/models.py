@@ -1,21 +1,17 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.utils.translation import gettext_lazy as _
 
 
 class Profile(models.Model):
-    """
-    Represents a user profile.
+    """A class to represent a user profile.
 
     Attributes:
-        user (User): The associated user for this profile.
-        favorite_city (str): The favorite city of the user.
-    """
+        user (obj): The User object linked to the profile.
+        favorite_city (str): The user's favorite city.
 
-    class Meta:
-        db_table = "oc_lettings_site_profile"
-        verbose_name = _("Profile")
-        verbose_name_plural = _("Profiles")
+    Methods:
+        __str__: Returns the username of the user when str() is called.
+    """
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     favorite_city = models.CharField(max_length=64, blank=True)

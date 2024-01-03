@@ -1,30 +1,21 @@
 from django.core.validators import MaxValueValidator, MinLengthValidator
 from django.db import models
-from django.utils.translation import gettext_lazy as _
 
 
 class Address(models.Model):
-    """
-    Represents an address.
+    """A class to represent an address.
 
     Attributes:
-        number (int): The number of the address.
-        street (str): The name of the street.
-        city (str): The name of the city.
-        state (str): The state code.
-        zip_code (int): The ZIP code.
-        country_iso_code (str): The ISO code of the country.
+        number (int): Number where is the letting
+        street (str): Street where is the letting
+        city (str): City where is the letting
+        state (str): State where is  the letting like GA for Georgia
+        zip_code (int): Zipcode where is the letting
+        country_iso_code (str): Country ISO code where is the letting like USA
 
-    Meta:
-        db_table (str): The name of the database table.
-        verbose_name (str): The singular name for the model.
-        verbose_name_plural (str): The plural name for the model.
+    Methods:
+        __str__: display number and street when str() is called
     """
-
-    class Meta:
-        db_table = "oc_lettings_site_address"
-        verbose_name = _("Address")
-        verbose_name_plural = _("Addresses")
 
     number = models.PositiveIntegerField(validators=[MaxValueValidator(9999)])
     street = models.CharField(max_length=64)
@@ -35,26 +26,24 @@ class Address(models.Model):
         max_length=3, validators=[MinLengthValidator(3)]
     )
 
+    class Meta:
+        # avoids bad pluralization
+        verbose_name_plural = "Address"
+
     def __str__(self):
         return f"{self.number} {self.street}"
 
 
 class Letting(models.Model):
-    """
-    Represents a letting in the Orange County Lettings site.
+    """A class to represent a letting.
 
     Attributes:
-        title (str): The title of the letting.
-        address (Address): The address of the letting.
+        title (str): Title of the letting
+        address (obj): Address linked to the letting
 
     Methods:
-        __str__(): Returns a string representation of the letting.
+        __str__: display title of the letting when str() is called
     """
-
-    class Meta:
-        db_table = "oc_lettings_site_letting"
-        verbose_name = _("Letting")
-        verbose_name_plural = _("Lettings")
 
     title = models.CharField(max_length=256)
     address = models.OneToOneField(Address, on_delete=models.CASCADE)
