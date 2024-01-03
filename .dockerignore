@@ -1,6 +1,7 @@
 *
 # Whitelist everything below
 !lettings/**/*.py
+!lettings/**/*.html
 !lettings_site/**/*.html
 !oc_lettings_site/**/*.py
 !oc_lettings_site/**/*.html
@@ -12,4 +13,6 @@
 !manage.py
 !poetry.lock
 !pyproject.toml
-!oc_lettings_site.sqlite3
+!oc-lettings-site.sqlite3
+
+
