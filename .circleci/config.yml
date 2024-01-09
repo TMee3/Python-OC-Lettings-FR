@@ -26,7 +26,7 @@ jobs:
       - checkout
       - run:
           name: "Deploy"
-          command: curl -X POST https://api.render.com/deploy/srv-cmai4b6d3nmc73cqdf0g?key=rOHjWQx__zA
+          command: curl -X POST $RENDER_WEBHOOK
 
 workflows:
   version: 2
