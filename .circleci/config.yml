@@ -1,7 +1,4 @@
 version: 2.1
-orbs:
-  python: circleci/python@1.2.1
-
 jobs:
   build:
     docker:
@@ -9,7 +6,9 @@ jobs:
     working_directory: /code
     steps:
       - checkout
-      
+      - run:
+          name: Install Dependencies
+          command: pip install poetry
       - run:
           name: Install Project Dependencies
           command: poetry install --only=main
@@ -30,7 +29,9 @@ jobs:
           command: poetry run coverage report
       - run:
           name: Coverage HTML
-          command: poetry run coverage html
+          command: poetry run coverage 
+
+
 
   deploy:
     docker:
