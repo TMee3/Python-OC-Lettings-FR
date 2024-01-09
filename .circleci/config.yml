@@ -11,7 +11,9 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: poetry
-          project-dir: /code 
+      - run:
+          name: Set Working Directory
+          command: cd /code
       - run:
           name: Collect Static Files
           command: poetry run python manage.py collectstatic --noinput
