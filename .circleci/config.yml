@@ -21,6 +21,9 @@ jobs:
       - run:
           name: Run Tests
           command: poetry run python manage.py test
+      - run:
+          name: Coverage
+          command: poetry run coverage run --source='.' manage.py test
 
   deploy:
     docker:
