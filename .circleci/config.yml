@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/python:3.11.0
+      - image: python:3.11
     working_directory: /code
     steps:
       - checkout
@@ -13,25 +13,17 @@ jobs:
           name: Install Project Dependencies
           command: poetry install --only=main
       - run:
-          name: Collect Static Files
-          command: poetry run python manage.py collectstatic --noinput
-      - run:
           name: Run Migrations
           command: poetry run python manage.py migrate
       - run:
           name: Run Linting
-          command: poetry run flake8 --ignore=F841 
+          command: poetry run flake8 --ignore=F841
       - run:
           name: Run Tests
           command: poetry run python manage.py test
       - run:
           name: Coverage Report
           command: poetry run coverage report
-      - run:
-          name: Coverage HTML
-          command: poetry run coverage 
-
-
 
   deploy:
     docker:
