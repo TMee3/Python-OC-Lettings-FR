@@ -4,6 +4,7 @@ from pathlib import Path
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.logging import LoggingIntegration
+
 import logging
 
 
@@ -14,7 +15,6 @@ sentry_sdk.init(
     dsn="https://50082559959af4e140bb7b8aba7ef855@o4506340937760768.ingest.sentry.io/4506385496211456",
     integrations=[DjangoIntegration(), LoggingIntegration(level=logging.INFO, event_level=logging.INFO)],
     traces_sample_rate=1.0,
-    profiles_sample_rate=1.0,
     send_default_pii=True,
 )
 
@@ -54,6 +54,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
+   
 ]
 
 ROOT_URLCONF = "oc_lettings_site.urls"

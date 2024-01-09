@@ -7,25 +7,23 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from . import views
 
-logger = logging.getLogger(__name__)
+from . import views
 
 
 def demo_info_view(request):
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)  # Définissez le niveau de journalisation INFO explicitement
     logger.info("Ceci est un événement INFO pour Sentry")
     return HttpResponse("Événement INFO envoyé à Sentry")
 
-
 def demo_error_view(request):
+    logger = logging.getLogger(__name__)
     try:
-        # Code générant une erreur
         result = 1 / 0
     except Exception as e:
-        # Envoie une exception ERROR à Sentry
         logger.error("Une erreur s'est produite : %s", e)
     return HttpResponse("Événement ERROR envoyé à Sentry")
-
 
 urlpatterns = [
     path("", views.index, name="index"),
