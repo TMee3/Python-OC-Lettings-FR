@@ -43,8 +43,10 @@ jobs:
       - run:
           name: Deploy to Render
           command: |
-            # Trigger the Render deploy webhook
-            curl -X POST $RENDER_WEBHOOK
+            IMAGE_TAG=$DOCKERHUB_USERNAME/p13:$CIRCLE_BUILD_NUM
+            docker pull $IMAGE_TAG
+            curl -X POST $RENDER_WEBHOOK --data "image=$IMAGE_TAG" 
+
 
 workflows:
   version: 2
