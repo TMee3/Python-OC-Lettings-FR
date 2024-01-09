@@ -1,3 +1,4 @@
+import logging
 import os
 from pathlib import Path
 
@@ -5,15 +6,15 @@ import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from sentry_sdk.integrations.logging import LoggingIntegration
 
-import logging
-
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 sentry_sdk.init(
     dsn="https://50082559959af4e140bb7b8aba7ef855@o4506340937760768.ingest.sentry.io/4506385496211456",
-    integrations=[DjangoIntegration(), LoggingIntegration(level=logging.INFO, event_level=logging.INFO)],
+    integrations=[
+        DjangoIntegration(),
+        LoggingIntegration(level=logging.INFO, event_level=logging.INFO),
+    ],
     traces_sample_rate=1.0,
     send_default_pii=True,
 )
@@ -42,7 +43,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "lettings",
     "profiles",
-
 ]
 
 MIDDLEWARE = [
@@ -54,7 +54,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
-   
 ]
 
 ROOT_URLCONF = "oc_lettings_site.urls"

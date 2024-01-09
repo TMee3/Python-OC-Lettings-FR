@@ -1,21 +1,23 @@
 import logging
 
-from django.contrib import admin
-from django.http import HttpResponse
-from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+from django.http import HttpResponse
+from django.urls import include, path
 
 from . import views
 
 
 def demo_info_view(request):
     logger = logging.getLogger(__name__)
-    logger.setLevel(logging.INFO)  # Définissez le niveau de journalisation INFO explicitement
+    logger.setLevel(
+        logging.INFO
+    )  # Définissez le niveau de journalisation INFO explicitement
     logger.info("Ceci est un événement INFO pour Sentry")
     return HttpResponse("Événement INFO envoyé à Sentry")
+
 
 def demo_error_view(request):
     logger = logging.getLogger(__name__)
@@ -24,6 +26,7 @@ def demo_error_view(request):
     except Exception as e:
         logger.error("Une erreur s'est produite : %s", e)
     return HttpResponse("Événement ERROR envoyé à Sentry")
+
 
 urlpatterns = [
     path("", views.index, name="index"),
