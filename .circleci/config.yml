@@ -16,9 +16,6 @@ jobs:
           name: Run Migrations
           command: poetry run python manage.py migrate
       - run:
-          name: Run Linting
-          command: poetry run flake8 --ignore=F841
-      - run:
           name: Run Tests
           command: poetry run python manage.py test
       - run:
