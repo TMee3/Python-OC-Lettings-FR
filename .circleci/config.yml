@@ -24,6 +24,13 @@ jobs:
       - run:
           name: Coverage
           command: poetry run coverage run --source='.' manage.py test
+# Docker Build and Push
+      - run:
+          name: Build and Push Docker Image
+          command: |
+            docker build -t $DOCKERHUB_USERNAME/p13 .
+            docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
+            docker push $DOCKERHUB_USERNAME/p13
 
   deploy:
     docker:
