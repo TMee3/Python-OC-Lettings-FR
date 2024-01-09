@@ -39,6 +39,8 @@ jobs:
     working_directory: ~/project
     steps:
       - checkout
+      - python/install-packages:
+          pkg-manager: poetry
       - setup_remote_docker:
           version: 20.10.7
       - run:
