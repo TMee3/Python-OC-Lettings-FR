@@ -16,7 +16,7 @@ RUN pip install poetry
 COPY pyproject.toml poetry.lock ./
 
 # Installez les dépendances du projet avec Poetry
-RUN poetry install --only=main
+RUN poetry install --no-dev
 
 # Copiez le contenu de votre projet dans le conteneur
 COPY . .

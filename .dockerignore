@@ -14,5 +14,7 @@
 !poetry.lock
 !pyproject.toml
 !oc-lettings-site.sqlite3
+!staticfiles
+
 
 
