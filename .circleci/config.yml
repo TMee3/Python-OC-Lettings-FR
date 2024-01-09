@@ -1,6 +1,4 @@
 version: 2.1
-orbs :
-  python: circleci/python@1.2.2
 
 jobs:
   build:
@@ -12,7 +10,7 @@ jobs:
       - python/install-packages:
           pkg-manager: poetry
           path: ~/project
-          
+
       - run:
           name: Install Project Dependencies
           command: poetry install --only=main
