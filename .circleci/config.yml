@@ -8,12 +8,12 @@ jobs:
       - image: cimg/python:3.11.0
     working_directory: /code
     steps:
+      - run:
+          name: Create /code directory
+          command: mkdir -p /code
       - checkout
       - python/install-packages:
           pkg-manager: poetry
-      - run:
-          name: Set Working Directory
-          command: cd /code
       - run:
           name: Collect Static Files
           command: poetry run python manage.py collectstatic --noinput
