@@ -26,13 +26,14 @@ jobs:
           paths:
             - ~/.cache/pypoetry
           key: v1-dependencies-{{ checksum "poetry.lock" }}
-
       - run:
           name: Test and Coverage
           command: |
-            poetry run python manage.py makemigrations
+            # Execute database migrations
             poetry run python manage.py migrate
+            # Run tests and generate coverage report
             poetry run coverage run --source='.' manage.py test
+            # (Optional) Publish the coverage report to a coverage analysis tool
 
   deploy:
     docker:
@@ -41,15 +42,18 @@ jobs:
     steps:
       - checkout
       - setup_docker
-    # Install docker 
       - run:
           name: Build and Deploy
           command: |
+            # Build the Docker image
             IMAGE_TAG=$DOCKERHUB_USERNAME/p13:$CIRCLE_BUILD_NUM
             docker build -t $IMAGE_TAG .
+            # Login to DockerHub and push the image
             docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
             docker push $IMAGE_TAG
-            docker pull $IMAGE_TAG
+            # (Optional) Pull the image for verification or further steps
+            # docker pull $IMAGE_TAG
+            # Deploy the image to the deployment environment
             curl -X POST $RENDER_WEBHOOK --data "image=$IMAGE_TAG" 
 
 workflows:
