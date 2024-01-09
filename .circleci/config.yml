@@ -23,6 +23,8 @@ jobs:
       - run:
           name: Coverage
           command: poetry run coverage run --source='.' manage.py test
+      - setup_remote_docker:
+          version: 20.10.7
       - run:
           name: Build and Push Docker Image
           command: |
@@ -36,13 +38,13 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
+      - setup_remote_docker:
+          version: 20.10.7
       - run:
-          name: Pull and Deploy Docker Image
+          name: Deploy to Render
           command: |
-            IMAGE_TAG=$DOCKERHUB_USERNAME/p13:$CIRCLE_BUILD_NUM
-            docker pull $IMAGE_TAG
-            curl -X POST $RENDER_WEBHOOK --data "image=$IMAGE_TAG"
-    
+            # Trigger the Render deploy webhook
+            curl -X POST $RENDER_WEBHOOK
 
 workflows:
   version: 2
@@ -50,7 +52,6 @@ workflows:
     jobs:
       - build
       - deploy:
-          name: Deploy to Render
           requires:
             - build
           filters:
