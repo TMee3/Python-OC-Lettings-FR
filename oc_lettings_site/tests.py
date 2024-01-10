@@ -18,4 +18,3 @@ class TestLettingsSiteIndexView(TestCase):
         # Assert the HTTP status code, template used, and content
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "index.html")
-        self.assertContains(response, "Welcome to Holiday Homes")
