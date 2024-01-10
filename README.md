@@ -197,3 +197,5 @@ Pour se faire ces variables seront rajoutées dans :
 | CIRCLE_BUILD_NUM			  | Version du build docker | CircleCI |
 
 
+### DOCS Read the docs
+Pour acceder à la doc aller sur :  [Read the docs](https://python-oc-lettings-docs.readthedocs.io/en/latest/instructions_installation.html/) 
