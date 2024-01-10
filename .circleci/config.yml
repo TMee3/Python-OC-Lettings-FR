@@ -36,6 +36,8 @@ jobs:
           command: |
             poetry run python manage.py migrate
             poetry run coverage run --source='.' manage.py test 
+            poetry run coverage report
+            poetry run coverage html
 
   deploy:
     docker:

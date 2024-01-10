@@ -199,3 +199,5 @@ Pour se faire ces variables seront rajoutées dans :
 
 ### DOCS Read the docs
 Pour acceder à la doc aller sur :  [Read the docs](https://python-oc-lettings-docs.readthedocs.io/en/latest/instructions_installation.html/) 
+
+### Coverage 
