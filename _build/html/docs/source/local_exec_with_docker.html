@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exécuter le site, en local, avec Docker &#8212; Documentation Python-OC-Lettings-DOCS 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=7a28dfa3"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=d99ca74e"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="executer-le-site-en-local-avec-docker">
+<h1>Exécuter le site, en local, avec Docker<a class="headerlink" href="#executer-le-site-en-local-avec-docker" title="Link to this heading">¶</a></h1>
+<p>Vous devez avoir installé « docker » (ou podman) et « docker-compose ».</p>
+<p>On va exécuter un script format BASH. Sur Windows il faudra adapter, jouer les seules commandes nécessaires.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd oc_projet13_orange_country_lettings/</span>
+</pre></div>
+</div>
+<p>Pour une première exécution:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./docker-compose-deployment.sh build</span>
+</pre></div>
+</div>
+<p>Dans le cas où vous avez déjà les images en local et l’application initialisée:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./docker-compose-deployment.sh run</span>
+</pre></div>
+</div>
+<p>Pour arrêter les conteneurs:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./docker-compose-deployment.sh down</span>
+</pre></div>
+</div>
+<p>Remarque: noter que vous pouvez télécharger les 2 images publiques suivantes (usage de podman ou docker selon les versions d’OS):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">podman pull docker.io/memphistools/public_repo:oc_projet13_orange_country_lettings_web</span>
+
+<span class="go">podman pull docker.io/memphistools/public_repo:oc_projet13_orange_country_lettings_nginx</span>
+</pre></div>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Python-OC-Lettings-DOCS</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, Théo Pidoux.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/docs/source/local_exec_with_docker.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

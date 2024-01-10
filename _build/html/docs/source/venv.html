@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Créer l’environnement virtuel &#8212; Documentation Python-OC-Lettings-DOCS 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=7a28dfa3"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=d99ca74e"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="creer-l-environnement-virtuel">
+<h1>Créer l’environnement virtuel<a class="headerlink" href="#creer-l-environnement-virtuel" title="Link to this heading">¶</a></h1>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd /path/to/Python-OC-Lettings-FR</span>
+
+<span class="go">python -m venv venv</span>
+
+<span class="go">apt-get install python3-venv`</span>
+</pre></div>
+</div>
+<p>Si l’étape précédente comporte des erreurs avec un paquet non trouvé sur Ubuntu</p>
+<ul class="simple">
+<li><p>Activer l’environnement</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">source venv/bin/activate</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Confirmer que la commande <cite>python</cite> exécute l’interpréteur Python dans l’environnement virtuel: <cite>which python</cite></p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python</span>
+
+<span class="go">which python</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Confirmer que la version de l’interpréteur Python est la version 3.6 ou supérieure:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python --version</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Confirmer que la commande <cite>pip</cite> exécute l’exécutable pip dans l’environnement virtuel, <cite>which pip</cite></p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pip</span>
+
+<span class="go">which pip</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Pour désactiver l’environnement:</p></li>
+</ul>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">deactivate</span>
+</pre></div>
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Python-OC-Lettings-DOCS</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, Théo Pidoux.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/docs/source/venv.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

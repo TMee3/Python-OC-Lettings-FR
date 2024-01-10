@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Conteneurisation de l’application &#8212; Documentation Python-OC-Lettings-DOCS 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="../../_static/alabaster.css?v=039e1c02" />
+    <script src="../../_static/documentation_options.js?v=7a28dfa3"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/translations.js?v=d99ca74e"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Recherche" href="../../search.html" />
+   
+  <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="conteneurisation-de-l-application">
+<h1>Conteneurisation de l’application<a class="headerlink" href="#conteneurisation-de-l-application" title="Link to this heading">¶</a></h1>
+<p>L’arborescence du projet est adaptée à une conteneurisation basique de Docker, « dans un contexte similaire à celui présenté » ».</p>
+<p>2 services supplémentaires sont introduits: Gunicorn et Nginx.</p>
+<p>Gunicorn va servir le contenu délivré par l’application Python (Django en l’occurence). Gunicorn et le code applicatif formeront 1 service global.</p>
+<p>Nginx servira de reverse proxy “au service” de Gunicorn, en servant tout fichier statique: images, css, js etc.</p>
+<p>On aura 2 conteneurs Docker, 1 pour chaque service. Ils sont orchestrés par « docker-compose (Compose) »: on ne lance pas l’un sans l’autre.</p>
+<p>Un fichier « docker-compose.dev.yml » est celui utilisé lors des phases de « build »</p>
+<p>Un second fichier « docker-compose.prod.yml » est celui utilisé lors des phsases « d’exécution ».</p>
+<p>Un script unique permet de déployer l’application sur Docker, soit localement, soit sur cloud: docker-compose-deployment.sh.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../index.html">Python-OC-Lettings-DOCS</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, Théo Pidoux.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../../_sources/docs/source/deploy_conteneuriser.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
