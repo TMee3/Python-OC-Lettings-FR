@@ -55,11 +55,12 @@ jobs:
           name: Ls files
           command: |
             ls -la .
+            ls -R .
 
       - run:
           name: Build and Deploy
           command: |
-            docker build -t tmee3/p13:1.0 ./project/
+            docker build -t tmee3/p13:1.0 ./
             docker push tmee3/p13:1.0
             curl -X POST $RENDER_WEBHOOK --data "image=tmee3/p13:1.0"
 
