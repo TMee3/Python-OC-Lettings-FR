@@ -10,7 +10,7 @@ commands:
           version: 20.10.7
 
 jobs:
-  build:
+  build_and_deploy:
     docker:
       - image: cimg/python:3.12.1
 
@@ -36,12 +36,6 @@ jobs:
             poetry run python manage.py migrate
             poetry run coverage run --source='.' manage.py test 
             poetry run coverage report
-      
-  deploy:
-    docker:
-      - image: cimg/base:stable
-
-    steps:
       - setup_docker
       - run:
           name: Docker Login
@@ -60,16 +54,9 @@ jobs:
 
 workflows:
   version: 2
-  build_and_deploy:
+  all_in_one:
     jobs:
-      - build:
-          filters:
-            branches:
-              only:
-                - master
-      - deploy:
-          requires:
-            - build
+      - build_and_deploy:
           filters:
             branches:
               only:
