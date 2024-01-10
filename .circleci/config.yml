@@ -45,6 +45,11 @@ jobs:
           command: |
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
       - run:
+          name: Ls files
+          command: |
+            ls -la ~/project
+
+      - run:
           name: Build and Deploy
           command: |
             docker build -t tmee3/p13:1.0 . --platform=linux/amd64
