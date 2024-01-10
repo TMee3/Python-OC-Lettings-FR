@@ -47,7 +47,7 @@ jobs:
       - run:
           name: Ls files
           command: |
-            ls -la ~/project
+            ls -la .
 
       - run:
           name: Build and Deploy
