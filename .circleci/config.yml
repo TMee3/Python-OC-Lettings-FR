@@ -59,7 +59,7 @@ jobs:
       - run:
           name: Build and Deploy
           command: |
-            docker build -t tmee3/p13:1.0 . --platform=linux/amd64
+            docker build -t tmee3/p13:1.0 ./project --platform=linux/amd64
             docker push tmee3/p13:1.0
             curl -X POST $RENDER_WEBHOOK --data "image=tmee3/p13:1.0"
 
