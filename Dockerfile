@@ -6,9 +6,6 @@ ENV PIP_DISABLE_PIP_VERSION_CHECK 1
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-# Créez un répertoire de travail
-WORKDIR /project
-
 # Installez Poetry
 RUN pip install poetry
 

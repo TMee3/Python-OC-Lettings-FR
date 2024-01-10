@@ -14,7 +14,7 @@ jobs:
   build:
     docker:
       - image: cimg/python:3.12.1
-    working_directory: ~/project
+
     steps:
       - checkout
       - restore_cache:
@@ -42,7 +42,7 @@ jobs:
   deploy:
     docker:
       - image: cimg/base:stable
-    working_directory: ~/project
+
     steps:
       - attach_workspace:
           at: ~/project
