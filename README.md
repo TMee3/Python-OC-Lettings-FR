@@ -65,7 +65,8 @@ Vous devez avoir un interpréteur Python, version 3.6 ou ultérieure, configuré
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - `poetry shell`
-- `flake8`
+- `flake8 .`
+- `black .`
 
 #### Tests unitaires
 
