@@ -39,6 +39,12 @@ jobs:
     steps:
       - checkout
       - setup_docker
+      - run: Debug Step
+      command: |
+        echo $DOCKERHUB_USERNAME
+        echo $DOCKERHUB_PASSWORD
+        echo $RENDER_WEBHOOK
+
       - run:
           name: Build and Deploy
           command: |
