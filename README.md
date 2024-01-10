@@ -201,3 +201,4 @@ Pour se faire ces variables seront rajoutées dans :
 Pour acceder à la doc aller sur :  [Read the docs](https://python-oc-lettings-docs.readthedocs.io/en/latest/instructions_installation.html/) 
 
 ### Coverage 
+Pour acceder au coverage aller sur htmlcov/index.html du git.
