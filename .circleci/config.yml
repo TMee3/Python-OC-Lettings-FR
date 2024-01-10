@@ -41,7 +41,7 @@ jobs:
           name: Docker Login
           command: |
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-      -run: 
+      - run:
           name: ReadTheDocs Build
           command: 
             poetry run sphinx-build -b html docs/source docs/build
