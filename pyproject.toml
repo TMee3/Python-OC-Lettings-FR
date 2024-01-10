@@ -12,7 +12,8 @@ sentry-sdk = {extras = ["django"], version = "^1.39.0"}
 sphinx = "^7.2.6"
 whitenoise = "^6.6.0"
 flake8 = "^6.1.0"
-black = "^21.12b0"
+black = "^23.12.1"
+
 
 [tool.poetry.group.dev.dependencies]
 
