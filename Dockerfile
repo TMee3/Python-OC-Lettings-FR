@@ -7,7 +7,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 # Créez un répertoire de travail
-WORKDIR /code
+WORKDIR /project
 
 # Installez Poetry
 RUN pip install poetry
