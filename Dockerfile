@@ -9,8 +9,8 @@ ENV PYTHONUNBUFFERED 1
 # Créez un répertoire de travail
 WORKDIR /project
 
-# Installation de Poetry
-RUN curl -sSL https://install.python-poetry.org | python3 -
+# Installez Poetry
+RUN pip install poetry
 
 # Copiez le fichier pyproject.toml et le fichier poetry.lock dans le conteneur
 COPY pyproject.toml poetry.lock ./
