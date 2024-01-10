@@ -47,6 +47,9 @@ jobs:
             echo $DOCKERHUB_PASSWORD
             echo $RENDER_WEBHOOK
       - run:
+          name: Docker Login
+          command: echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+      - run:
           name: Build and Deploy
           command: |
             docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD
