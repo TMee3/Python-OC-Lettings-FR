@@ -1,5 +1,5 @@
 # Utilisez une image de base Python
-FROM python:3.12.0-alpine3.14
+FROM python:3.12.1-alpine
 
 # Set environment variables
 ENV PIP_DISABLE_PIP_VERSION_CHECK 1
