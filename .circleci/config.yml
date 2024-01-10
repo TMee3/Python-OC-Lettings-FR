@@ -1,7 +1,16 @@
 version: 2.1
+orbs:
+  python: circleci/python@2.1.1
+  
+commands:
+  setup_docker:
+    description: "Setup Docker Environment"
+    steps:
+      - setup_remote_docker:
+          version: 20.10.7
 
 jobs:
-  build:
+  build_and_deploy:
     docker:
       - image: cimg/python:3.12.1
 
@@ -9,18 +18,15 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "pyproject.toml" }}
-      - run:
-          name: Install Dependencies
-          command: |
-            pip install poetry
-            poetry install
+            - v1-dependencies-{{ checksum "poetry.lock" }}
+      - python/install-packages:
+          pkg-manager: poetry
       - save_cache:
           paths:
             - ~/.cache/pypoetry
-          key: v1-dependencies-{{ checksum "pyproject.toml" }}
+          key: v1-dependencies-{{ checksum "poetry.lock" }}
       - run:
-          name: Lint and Format
+          name: lint and format
           command: |
             poetry run black .
             poetry run flake8 . --ignore=F841
@@ -30,6 +36,8 @@ jobs:
             poetry run python manage.py migrate
             poetry run coverage run --source='.' manage.py test 
             poetry run coverage report
+
+      - setup_docker
       - run:
           name: Docker Login
           command: |
@@ -48,7 +56,7 @@ workflows:
   version: 2
   all-in-one:
     jobs:
-      - build:
+      - build_and_deploy:
           filters:
             branches:
               only:
