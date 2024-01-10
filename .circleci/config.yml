@@ -35,7 +35,7 @@ jobs:
           name: Test and Coverage
           command: |
             poetry run python manage.py migrate
-            poetry run coverage run --source='.' manage.py test
+            poetry run coverage run --source='.' manage.py test 
 
   deploy:
     docker:
