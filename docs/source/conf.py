@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Python-OC-Lettings-FR'
-copyright = '2023, laseguue'
-author = 'laseguue'
+copyright = 'Théo Pidoux 2024'
+author = 'Tmee3'
 release = '1'
 
 # -- General configuration ---------------------------------------------------
