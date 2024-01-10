@@ -60,9 +60,10 @@ workflows:
   version: 2
   build-and-deploy:
     jobs:
-      - build
-      - deploy
+      - deploy:
+          requires:
+            - build
           filters:
             branches:
               only:
-                - main
+                - master
