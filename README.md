@@ -202,3 +202,5 @@ Pour acceder à la doc aller sur :  [Read the docs](https://python-oc-lettings-d
 
 ### Coverage 
 Pour acceder au coverage aller sur htmlcov/index.html du git.
+
+[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/H9iW4TvE8Xq4wXX5Te78d5/Rhyi3dax31MnKuSpm6Dr5D/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/circleci/H9iW4TvE8Xq4wXX5Te78d5/Rhyi3dax31MnKuSpm6Dr5D/tree/main)
