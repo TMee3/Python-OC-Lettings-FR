@@ -39,24 +39,23 @@ jobs:
             poetry run coverage report
             poetry run coverage html
 
-deploy:
-  docker:
-    - image: cimg/base:stable
+  deploy:
+    docker:
+      - image: cimg/base:stable
 
-  steps:
-    - checkout
-    - setup_docker
-    - run:
-        name: Docker Login
-        command: |
-          echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
-    - run:
-        name: Build and Deploy
-        command: |
-          docker build -t tmee3/p13:1.0 ./
-          docker push tmee3/p13:1.0
-          curl -X POST $RENDER_WEBHOOK --data "image=tmee3/p13:1.0"
-
+    steps:
+      - checkout
+      - setup_docker
+      - run:
+          name: Docker Login
+          command: |
+            echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
+      - run:
+          name: Build and Deploy
+          command: |
+            docker build -t tmee3/p13:1.0 ./
+            docker push tmee3/p13:1.0
+            curl -X POST $RENDER_WEBHOOK --data "image=tmee3/p13:1.0"
 
 workflows:
   version: 2
