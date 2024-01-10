@@ -30,7 +30,7 @@ jobs:
           name: lint and format
           command: |
             poetry run black .
-            poetry run flake8 . -ignore=F841
+            poetry run flake8 . --ignore=F841
       - run:
           name: Test and Coverage
           command: |
