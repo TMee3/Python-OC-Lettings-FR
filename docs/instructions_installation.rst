@@ -21,11 +21,10 @@ Avant de commencer, assurez-vous que les éléments suivants sont installés sur
    - Utilisez la commande `git clone [URL]` pour cloner le repository du projet sur votre machine locale. Remplacez `[URL]` par l'URL du repository Git.
 
 2. **Créer un Environnement Virtuel** :
-   - Exécutez `python -m venv venv` pour créer un nouvel environnement virtuel.
-   - Activez l'environnement virtuel avec `source venv/bin/activate` sur Unix/Linux ou `venv\Scripts\activate` sur Windows.
+   - Activez l'environnement virtuel avec `poetry shell` 
 
 3. **Installer les Dépendances** :
-   - Installez toutes les dépendances requises en exécutant `pip install -r requirements.txt` dans le dossier racine du projet.
+   - Installez toutes les dépendances requises en exécutant `poetry install` dans le dossier racine du projet.
 
 4. **Configurer la Base de Données PostgreSQL** :
    - Assurez-vous que PostgreSQL est installé et fonctionne sur votre machine.

@@ -17,10 +17,9 @@ Stack Technologique
    - Offre des fonctionnalités robustes pour la gestion des utilisateurs, des sessions, et des modèles de données.
    - Inclut un système d'administration puissant pour gérer le contenu du site.
 
-- **Base de données** : PostgreSQL
-   - Un système de gestion de base de données relationnelle reconnu pour sa robustesse et sa conformité aux standards.
-   - Excellent support pour les grandes bases de données et les requêtes complexes.
-   - Intègre des fonctionnalités avancées comme les indexation de texte intégral et le support géospatial.
+- **Base de données** : Sql lite
+   - Base de données relationnelle légère et rapide, idéale pour le développement et le test.
+   - Inclut un support intégré pour les tests unitaires, ce qui permet de tester facilement les modèles de données.
 
 - **Front-end** : HTML, CSS, JavaScript
    - HTML pour la structure de base des pages web.
@@ -35,9 +34,7 @@ Choix Techniques
    - Django supporte des principes de développement sécurisés, ce qui est crucial pour la gestion des données des utilisateurs et des transactions immobilières.
 
 - **Base de données**
-   - PostgreSQL a été choisi pour sa performance et sa fiabilité, assurant une gestion efficace des transactions et des requêtes de données.
-   - La compatibilité de Django avec PostgreSQL permet une intégration fluide et des optimisations de performances.
-
+   - Sql lite est un choix approprié pour le développement et le test, mais il est peu probable qu'il soit utilisé en production.
 - **Frontend**
    - L'association de HTML, CSS et JavaScript permet de créer une interface utilisateur intuitive et agréable, essentielle pour une plateforme de location immobilière.
    - Le responsive design assure que l'application est accessible et fonctionnelle sur une variété d'appareils, y compris les smartphones et les tablettes.
