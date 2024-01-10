@@ -45,11 +45,7 @@ jobs:
           name: ReadTheDocs Build
           command: 
             poetry run sphinx-build -b html docs/source docs/build
-      - run:
-          name: Trigger ReadTheDocs Build
-          command: |
-            curl -X POST "https://readthedocs.org/api/v3/projects/python-oc-lettings-docs/builds/" \
-                 -H "Authorization: Token 64006d1b39ec99736de44246c7f911a000a5d7dc"
+      
       - run:
           name: Build Docker Image
           command: docker build -t $DOCKERHUB_USERNAME/p13:$CIRCLE_BUILD_NUM	 ./
