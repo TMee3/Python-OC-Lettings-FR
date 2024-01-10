@@ -27,6 +27,11 @@ jobs:
             - ~/.cache/pypoetry
           key: v1-dependencies-{{ checksum "poetry.lock" }}
       - run:
+          name: lint and format
+          command: |
+            poetry run black .
+            poetry run flake8 . 
+      - run:
           name: Test and Coverage
           command: |
             poetry run python manage.py migrate
