@@ -137,7 +137,7 @@ Il est nécessaire de créer les comptes suivants :
 - Les tests unitaires et le lint du code se fera à chaque mise à jour de code dans n'importe quelle branche contenant la configuration CircleCI.
 - La dockerization sur DockerHub et le déploiement sur Heroku s'exécuteront à chaque mise à jour du code dans la branche master.
  
-Après le déploiement le site est accéssible à l'adresse: [python-oc-lettings-fr.onrender.com](https://python-oc-lettings-fr.onrender.com/)
+Après le déploiement le site est accéssible à l'adresse: [python-oc-lettings-fr.onrender.com](https://python-oc-lettings-fr.onrender.com/) ( Version de démo de render , qui démarre le site seulement quelque heures quand on le solicite)
 
 ## Exécution du docker en local
 
