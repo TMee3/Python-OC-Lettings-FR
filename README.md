@@ -59,7 +59,6 @@ Vous devez avoir un interpréteur Python, version 3.6 ou ultérieure, configuré
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - `poetry shell`
-- `poetry instal`
 - `python manage.py runserver`
 - Aller sur `http://localhost:8000` dans un navigateur.
 - Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
@@ -87,6 +86,13 @@ Vous devez avoir un interpréteur Python, version 3.6 ou ultérieure, configuré
 - Lancer une requête sur la table des profils, `select user_id, favorite_city from
   Python-OC-Lettings-FR_profile where favorite_city like 'B%';`
 - `.quit` pour quitter
+
+#### Test de coverage
+
+- `cd /path/to/Python-OC-Lettings-FR`
+- `poetry shell`
+- `coverage run --source='.' manage.py test`
+- `coverage report`
 
 #### Panel d'administration
 
@@ -138,9 +144,9 @@ Il est nécessaire de créer les comptes suivants :
 
 - Si toute l'installation est respectée, l'exécution du pipeline devrait se lancer à chaque mise à jour du code sur GitHub.
 - Les tests unitaires et le lint du code se fera à chaque mise à jour de code dans n'importe quelle branche contenant la configuration CircleCI.
-- La dockerization sur DockerHub et le déploiement sur Heroku s'exécuteront à chaque mise à jour du code dans la branche master.
+- La dockerization sur DockerHub et le déploiement sur Render s'exécuteront à chaque mise à jour du code dans la branche master.
  
-Après le déploiement le site est accéssible à l'adresse: [python-oc-lettings-fr.onrender.com](https://python-oc-lettings-fr.onrender.com/) ( Version de démo de render , qui démarre le site seulement quelque heures quand on le solicite)
+Après le déploiement le site est accessible à l'adresse: [python-oc-lettings-fr.onrender.com](https://python-oc-lettings-fr.onrender.com/) ( Version de démo de render , qui démarre le site seulement quelque heures quand on le solicite)
 
 ## Exécution du docker en local
 
