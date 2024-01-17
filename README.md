@@ -46,7 +46,7 @@ Vous devez avoir un interpréteur Python, version 3.6 ou ultérieure, configuré
 #### Cloner le repository
 
 - `cd /path/to/put/project/in`
-- `git clone https://github.com/TMee3/Python-OC-Lettings-FR.git
+- `git clone https://github.com/TMee3/Python-OC-Lettings-FR.git`
 
 #### Créer l'environnement virtuel
 
