@@ -1,5 +1,5 @@
 [![Documentation Status](https://readthedocs.org/projects/python-oc-lettings-docs/badge/?version=latest)](https://python-oc-lettings-docs.readthedocs.io/en/latest/?badge=latest)
-[![CircleCI](https://dl.circleci.com/status-badge/img/circleci/H9iW4TvE8Xq4wXX5Te78d5/Rhyi3dax31MnKuSpm6Dr5D/tree/main.svg?style=svg&circle-token=bfb453a3cc7d5c4abb76f7534923f6cd84f88479)](https://dl.circleci.com/status-badge/redirect/circleci/H9iW4TvE8Xq4wXX5Te78d5/Rhyi3dax31MnKuSpm6Dr5D/tree/main)
+
 
 - [Résumé](#résumé)
 - [Développement local](#développement-local)
