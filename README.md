@@ -39,7 +39,7 @@ Résumé des prérequis pour le développement local :
 Vous devez disposer d'un compte GitHub avec des autorisations de lecture pour accéder à ce référentiel.
 Vous devez avoir Git CLI installé.
 Vous devez avoir SQLite3 CLI installé.
-Vous devez avoir un interpréteur Python, version 3.6 ou ultérieure, configuré de manière à ce que la commande python dans votre shell OS exécute l'interpréteur Python requis, sauf si un environnement virtuel est activé.
+Vous devez avoir un interpréteur Python, version 3.61 ou ultérieure, configuré de manière à ce que la commande python dans votre shell OS exécute l'interpréteur Python requis, sauf si un environnement virtuel est activé.
 
 ### macOS / Linux
 
@@ -70,11 +70,15 @@ Vous devez avoir un interpréteur Python, version 3.6 ou ultérieure, configuré
 - `flake8 .`
 - `black .`
 
+En utilisant ces commandes, vous pouvez vérifier la qualité de votre code en termes de style et de conformité aux conventions PEP 8 grâce à flake8, et vous pouvez également automatiser la mise en forme de votre code pour qu'il suive ces conventions grâce à black. Le linting et la mise en forme du code sont des pratiques importantes pour maintenir un code propre, lisible et cohérent.
+
 #### Tests unitaires
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - `poetry shell`
 - `pytest`
+
+En exécutant ces commandes dans cet ordre, vous lancez les tests unitaires de votre projet. pytest s'occupe de l'exécution des tests et de l'affichage des résultats, vous montrant quels tests ont réussi et lesquels ont échoué. Les tests unitaires sont essentiels pour garantir que chaque composant individuel de votre code fonctionne correctement et qu'ils sont souvent le premier niveau de vérification de la qualité du logiciel.
 
 #### Base de données
 
@@ -88,6 +92,8 @@ Vous devez avoir un interpréteur Python, version 3.6 ou ultérieure, configuré
 - `.quit` pour quitter
 
 #### Test de coverage
+
+Le test de coverage, souvent simplement appelé "coverage", est un processus utilisé dans le développement de logiciels pour mesurer le degré de couverture du code source par les tests automatisés. Il permet de déterminer quelles parties du code source ont été exécutées pendant l'exécution des tests et quelles parties n'ont pas été exécutées. Le but principal du test de coverage est de s'assurer que toutes les lignes de code sont testées, ce qui contribue à identifier les zones du code qui pourraient contenir des erreurs non détectées.
 
 - `cd /path/to/Python-OC-Lettings-FR`
 - `poetry shell`
